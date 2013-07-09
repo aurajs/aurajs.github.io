@@ -1,4 +1,5 @@
 http://aurajs.com/404/
+http://aurajs.com/CNAME
 http://aurajs.com/extensions/
 http://aurajs.com/faq/
 http://aurajs.com/humans.txt
