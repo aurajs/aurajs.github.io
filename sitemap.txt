@@ -11,7 +11,6 @@ http://aurajs.com/about/
 http://aurajs.com/api/
 http://aurajs.com/examples/
 http://aurajs.com/getting-started/
-http://aurajs.com/guides/2013/07/06/aura-development-docs.html
 http://aurajs.com/guides/2013/07/06/welcome.html
 http://aurajs.com/guides/
 http://aurajs.com/images/doc-loading.gif
