@@ -37,6 +37,9 @@
     <loc>http://aurajs.com/sitemap.xml</loc>
   </url>
   <url>
+    <loc>http://aurajs.com/about/</loc>
+  </url>
+  <url>
     <loc>http://aurajs.com/api/</loc>
   </url>
   <url>

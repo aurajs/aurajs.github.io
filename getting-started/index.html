@@ -9,10 +9,10 @@
   <meta property='og:type' content='company' />
   <meta property='og:site_name' content="aura" />
   <meta property='og:url' content="http://aurajs.com" />
-  <link href="/stylesheets/style.css?1373360437" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/style.css?1374374261" media="screen" rel="stylesheet" type="text/css" />
   <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
-  <script src="/javascripts/application.js?1373360412" type="text/javascript"></script>
+  <script src="/javascripts/application.js?1374374259" type="text/javascript"></script>
   <script src="//d3f5pyioow99x0.cloudfront.net/0.5.2/hull.js"></script>
 <script>Hull.init({"appId":"51da11e01234b56ba0000202","orgUrl":"https://aura.hullapp.io","debug":true});</script>
 
@@ -26,7 +26,7 @@
   <ul>
     
     <li class="">
-      <a href="/" rel="About">
+      <a href="/about" rel="About">
         About
       </a>
     </li>
@@ -93,10 +93,9 @@
     <div>
       <a href="/" class="logo"></a>
       <div class="tree">  <div class="tree-nav-section">
-    <h3><a href="#concepts">Concepts</a></h3><p><a href="#aura-app">Aura App</a></p><p><a href="#extension">Extension</a></p><p><a href="#core">Core</a></p><p><a href="#sandbox">Sandbox</a></p><p><a href="#component">Component</a></p><h3><a href="#components">Components</a></h3><p><a href="#creating-and-starting-an-application">Creating and starting an application</a></p><p><a href="#creating-a-component">Creating a component</a></p><p><a href="#starting-components">Starting components</a></p><p><a href="#nesting-components">Nesting components</a></p><p><a href="#communication-between-components">Communication between components</a></p><p><a href="#component-sources">Component sources</a></p><h3><a href="#extending-aura">Extending Aura</a></h3><p><a href="#creating-extensions">Creating extensions</a></p><p><a href="#extensions-formats">Extensions formats</a></p><p><a href="#requiring-amd-modules">"requiring" AMD modules</a></p><p><a href="#dealing-with-asynchronicity-and-start-process">Dealing with asynchronicity and start process</a></p><p><a href="#using-extensions">Using extensions</a></p><h3><a href="#misc">Misc</a></h3><p><a href="#debugging">Debugging</a></p><p><a href="#building-aura">Building Aura</a></p>
+    <h3><a href="#concepts">Concepts</a></h3><ul><li><a href="#aura-app">Aura App</a></li><li><a href="#extension">Extension</a></li><li><a href="#core">Core</a></li><li><a href="#sandbox">Sandbox</a></li><li><a href="#component">Component</a></li></ul><h3><a href="#components">Components</a></h3><ul><li><a href="#creating-and-starting-an-application">Creating and starting an application</a></li><li><a href="#creating-a-component">Creating a component</a></li><li><a href="#starting-components">Starting components</a></li><li><a href="#nesting-components">Nesting components</a></li><li><a href="#communication-between-components">Communication between components</a></li><li><a href="#component-sources">Component sources</a></li></ul><h3><a href="#extending-aura">Extending Aura</a></h3><ul><li><a href="#creating-extensions">Creating extensions</a></li><li><a href="#extensions-formats">Extensions formats</a></li><li><a href="#requiring-amd-modules">"requiring" AMD modules</a></li><li><a href="#dealing-with-asynchronicity-and-start-process">Dealing with asynchronicity and start process</a></li><li><a href="#using-extensions">Using extensions</a></li></ul><h3><a href="#misc">Misc</a></h3><ul><li><a href="#debugging">Debugging</a></li><li><a href="#building-aura">Building Aura</a></li>
+    </ul>
   </div>
-
-
 
 <ul class="tree-nav-section">
   <li>
@@ -118,7 +117,9 @@
       <div class="row">
         <header class="documentation-header">
           <h1>Getting Started</h1>
-          <p>A framework-agnostic, extensible architecture for decoupled and reusable components.</p>
+          
+            <p>A framework-agnostic, extensible architecture for decoupled and reusable components.</p>
+          
         </header>
         
         <div class="documentation-body language-markup">
@@ -177,7 +178,7 @@ This means that they know nothing about each other. To make them communicate, a 
 </div></div>
 <p>This starts the <code>app</code> by saying that it should search for components anywhere in the <code>body</code> of your HTML document.</p>
 
-<p>If you want to restrict to scope to your application to a particular element, or set of elements in your document, you can pass a selector to start : </p>
+<p>If you want to restrict to scope to your application to a particular element, or set of elements in your document, you can pass a selector to start: </p>
 <div class="highlight js "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
   <td class="line-numbers" title="double click to toggle" ondblclick="with (this.firstChild.style) { display = (display == '') ? 'none' : '' }"><pre>1
 </pre></td>
@@ -187,13 +188,13 @@ This means that they know nothing about each other. To make them communicate, a 
 </div></div>
 <h3>App configuration</h3>
 
-<p>Aura&#39;s contructor take take a configuration object, that will be available as <code>app.config</code> in the the extensions.</p>
+<p>Aura&#39;s contructor can take a configuration object, that will be available as <code>app.config</code> in the extensions.</p>
 
 <p>Currently, the only config entry available on a barebone Aura application is <code>debug</code> (cf. <a href="#debugging">debug section</a>)</p>
 
 <h2>Creating a component</h2>
 
-<p>By default components are loaded from a this path : <code>./aura_components</code>, relative to your current document.</p>
+<p>By default components are loaded from a this path: <code>./aura_components</code>, relative to your current document.</p>
 
 <p>Let&#39;s say we want to create an &quot;hello&quot; component. To do that we need to create a <code>aura_components/hello</code> directory</p>
 
@@ -230,7 +231,7 @@ This means that they know nothing about each other. To make them communicate, a 
 
 <p>By default, your application will look for DOM Elements with a <code>data-aura-component</code> attribute.</p>
 
-<p>example:</p>
+<p>Example:</p>
 <div class="highlight html "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
   <td class="line-numbers" title="double click to toggle" ondblclick="with (this.firstChild.style) { display = (display == '') ? 'none' : '' }"><pre>1
 </pre></td>
@@ -242,7 +243,7 @@ This means that they know nothing about each other. To make them communicate, a 
 
 <p>You can also pass options to your component via data-attributes. </p>
 
-<p>example: </p>
+<p>Example: </p>
 <div class="highlight html "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
   <td class="line-numbers" title="double click to toggle" ondblclick="with (this.firstChild.style) { display = (display == '') ? 'none' : '' }"><pre>1
 2
@@ -254,7 +255,7 @@ This means that they know nothing about each other. To make them communicate, a 
 </pre></td>
 </tr></table>
 </div></div>
-<p>They will then be available in your component instance as : </p>
+<p>They will then be available in your component instance as: </p>
 <div class="highlight js "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
   <td class="line-numbers" title="double click to toggle" ondblclick="with (this.firstChild.style) { display = (display == '') ? 'none' : '' }"><pre>1
 2
@@ -278,13 +279,13 @@ This means that they know nothing about each other. To make them communicate, a 
 </div></div>
 <p>All listed components MUST have at least the <code>name</code> and <code>options.el</code> defined. Where <code>name</code> is the name of the component to start and <code>options.el</code> is a DOM selector to target the DOM Element that will be the root of your component.</p>
 
-<p>All other values passed to the options object, will be availaible in your component in <code>this.options</code>.</p>
+<p>All other values passed to the options object, will be available in your component in <code>this.options</code>.</p>
 
 <h2>Nesting components</h2>
 
 <p>This really starts to get interesting if you use templating and use Aura&#39;s superpower to nest components.</p>
 
-<p>Let&#39;s take an example (using underscore templating) : </p>
+<p>Let&#39;s take an example (using underscore templating): </p>
 
 <p><strong>aura_components/parent/template.html</strong></p>
 <div class="highlight html "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
@@ -342,15 +343,15 @@ This means that they know nothing about each other. To make them communicate, a 
 </pre></td>
 </tr></table>
 </div></div>
-<p>Then if you include your <code>parent</code> component : </p>
+<p>Then if you include your <code>parent</code> component: </p>
 <div class="highlight html "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
   <td class="line-numbers" title="double click to toggle" ondblclick="with (this.firstChild.style) { display = (display == '') ? 'none' : '' }"><pre>1
 </pre></td>
-  <td class="code"><pre><span class="tag">&lt;div</span> <span class="attribute-name">data-aura-component</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">parent</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">data-aura-chilren</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">one,two,three</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/div&gt;</span>
+  <td class="code"><pre><span class="tag">&lt;div</span> <span class="attribute-name">data-aura-component</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">parent</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">data-aura-children</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">one,two,three</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/div&gt;</span>
 </pre></td>
 </tr></table>
 </div></div>
-<p>The result will be : </p>
+<p>The result will be: </p>
 <div class="highlight html "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
   <td class="line-numbers" title="double click to toggle" ondblclick="with (this.firstChild.style) { display = (display == '') ? 'none' : '' }"><pre>1
 2
@@ -360,7 +361,7 @@ This means that they know nothing about each other. To make them communicate, a 
 6
 7
 </pre></td>
-  <td class="code"><pre><span class="tag">&lt;div</span> <span class="attribute-name">data-aura-component</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">parent</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">data-aura-chilren</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">one,two,three</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <td class="code"><pre><span class="tag">&lt;div</span> <span class="attribute-name">data-aura-component</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">parent</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">data-aura-children</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">one,two,three</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
   <span class="tag">&lt;ul&gt;</span>
     <span class="tag">&lt;li</span> <span class="attribute-name">data-aura-component</span>=<span class="string"><span class="delimiter">'</span><span class="content">child</span><span class="delimiter">'</span></span> <span class="attribute-name">data-aura-my-name</span>=<span class="string"><span class="delimiter">'</span><span class="content">one</span><span class="delimiter">'</span></span><span class="tag">&gt;</span>I am one<span class="tag">&lt;/li&gt;</span>
     <span class="tag">&lt;li</span> <span class="attribute-name">data-aura-component</span>=<span class="string"><span class="delimiter">'</span><span class="content">child</span><span class="delimiter">'</span></span> <span class="attribute-name">data-aura-my-name</span>=<span class="string"><span class="delimiter">'</span><span class="content">two</span><span class="delimiter">'</span></span><span class="tag">&gt;</span>I am two<span class="tag">&lt;/li&gt;</span>
@@ -370,13 +371,13 @@ This means that they know nothing about each other. To make them communicate, a 
 </pre></td>
 </tr></table>
 </div></div>
-<p>This means that you can truly build your applications, one component at a time, and literaly assemble them with markup.</p>
+<p>This means that you can truly build your applications, one component at a time and literally assemble them with markup.</p>
 
 <h3>Nesting &quot;manually&quot;</h3>
 
-<p>Components can also start children via they <code>this.sandbox.start</code> method, which can, like the <code>app.start</code> method start nested components by passing a list of component descriptions. </p>
+<p>Components can also start children via their <code>this.sandbox.start</code> method, which can, like the <code>app.start</code> method start nested components by passing a list of component descriptions. </p>
 
-<p>example: </p>
+<p>Example: </p>
 
 <p><strong>aura_components/my_component/main.js</strong></p>
 <div class="highlight js "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
@@ -396,7 +397,7 @@ This means that they know nothing about each other. To make them communicate, a 
 </pre></td>
 </tr></table>
 </div></div>
-<p>The <code>this.html</code> method actually does just that and this would be the exact equivalent of doing :</p>
+<p>The <code>this.html</code> method actually does just that and this would be the exact equivalent of doing:</p>
 <div class="highlight js "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
   <td class="line-numbers" title="double click to toggle" ondblclick="with (this.firstChild.style) { display = (display == '') ? 'none' : '' }"><pre>1
 2
@@ -460,11 +461,11 @@ This means that they know nothing about each other. To make them communicate, a 
 <h2>Component sources</h2>
 
 <p>Aura comes with the awesome ability to load components on demand from different sources. 
-A &quot;component source&quot; is just a http endpoint that serves components. It can be hosted anywhere on the web !</p>
+A &quot;component source&quot; is just a http endpoint that serves components. It can be hosted anywhere on the web!</p>
 
 <p>Aura comes preconfigured with one &#39;source&#39; called &#39;default&#39; and corresponds to <code>./aura_components</code> (relative to the current document).</p>
 
-<p>This can be overriden through your app&#39;s config like this : </p>
+<p>This can be overridden through your app&#39;s config like this: </p>
 <div class="highlight js "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
   <td class="line-numbers" title="double click to toggle" ondblclick="with (this.firstChild.style) { display = (display == '') ? 'none' : '' }"><pre>1
 2
@@ -476,7 +477,7 @@ A &quot;component source&quot; is just a http endpoint that serves components. I
 </pre></td>
 </tr></table>
 </div></div>
-<p>or even : </p>
+<p>or even: </p>
 <div class="highlight js "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
   <td class="line-numbers" title="double click to toggle" ondblclick="with (this.firstChild.style) { display = (display == '') ? 'none' : '' }"><pre>1
 2
@@ -490,7 +491,7 @@ A &quot;component source&quot; is just a http endpoint that serves components. I
 </div></div>
 <p>You can add other sources in this <code>config.sources</code> object.</p>
 
-<p>Let&#39;s say that we have a source for github components : </p>
+<p>Let&#39;s say that we have a source for github components: </p>
 <div class="highlight js "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
   <td class="line-numbers" title="double click to toggle" ondblclick="with (this.firstChild.style) { display = (display == '') ? 'none' : '' }"><pre>1
 2
@@ -508,7 +509,7 @@ A &quot;component source&quot; is just a http endpoint that serves components. I
 </div></div>
 <p>You can then reference and load them by appending @[source] after them. For the &#39;default&#39; source, this is optional.</p>
 
-<p>For example, if under our &#39;github&#39; source, we have an <code>issues</code> component and a <code>user-profile</code> component under our &#39;default&#39; source : </p>
+<p>For example, if under our &#39;github&#39; source, we have an <code>issues</code> component and a <code>user-profile</code> component under our &#39;default&#39; source: </p>
 <div class="highlight html "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
   <td class="line-numbers" title="double click to toggle" ondblclick="with (this.firstChild.style) { display = (display == '') ? 'none' : '' }"><pre>1
 2
@@ -518,7 +519,7 @@ A &quot;component source&quot; is just a http endpoint that serves components. I
 </pre></td>
 </tr></table>
 </div></div>
-<p>The equivalent in javascript would be : </p>
+<p>The equivalent in javascript would be: </p>
 
 <p><strong>aura_components/my-component/main.js</strong></p>
 <div class="highlight js "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
@@ -554,11 +555,11 @@ A &quot;component source&quot; is just a http endpoint that serves components. I
 
 <p>Let&#39;s get to the basics first.</p>
 
-<p>First, extensions are loaded and run when the application starts. It means that Aura guarantees that when your first component is loaded, all the extensions have already beed loaded.</p>
+<p>First, extensions are loaded and run when the application starts. It means that Aura guarantees that when your first component is loaded, all the extensions have already been loaded.</p>
 
 <p>All extensions have access to the internals of your app, and can do pretty much what they want at this stage, but they are really only supposed to provide features to the components via the <code>sandbox</code> object, available on the app&#39;s instance.</p>
 
-<p>This <code>sandbox</code>, is like a blueprint that gets augmented by the extensions during the app initialization process. Afterwards, each components will get a new fresh clone of this object.</p>
+<p>This <code>sandbox</code>, is like a blueprint that gets augmented by the extensions during the app initialization process. Afterwards, each component will get a new fresh clone of this object.</p>
 
 <p>This instance of <code>sandbox</code>, available via <code>this.sandbox</code> inside our component and is the ONLY thing it knows about the outside world.</p>
 
@@ -586,7 +587,7 @@ A &quot;component source&quot; is just a http endpoint that serves components. I
 </pre></td>
 </tr></table>
 </div></div>
-<p>Then to use it within a component : </p>
+<p>Then to use it within a component: </p>
 <div class="highlight js "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
   <td class="line-numbers" title="double click to toggle" ondblclick="with (this.firstChild.style) { display = (display == '') ? 'none' : '' }"><pre>1
 2
@@ -620,7 +621,7 @@ aura().use(ext).start(<span class="string"><span class="delimiter">'</span><span
 </pre></td>
 </tr></table>
 </div></div>
-<h3>Object litteral</h3>
+<h3>Object literal</h3>
 <div class="highlight js "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
   <td class="line-numbers" title="double click to toggle" ondblclick="with (this.firstChild.style) { display = (display == '') ? 'none' : '' }"><pre>1
 2
@@ -654,7 +655,7 @@ aura().use(ext).start(<span class="string"><span class="delimiter">'</span><span
 </pre></td>
 </tr></table>
 </div></div>
-<p>The Object litteral form allows to add AMD dependencies Application lifecycle callbacks like <code>afterAppStart</code>.</p>
+<p>The Object literal form allows to add AMD dependencies Application lifecycle callbacks like <code>afterAppStart</code>.</p>
 
 <h2>&quot;requiring&quot; AMD modules</h2>
 
@@ -662,7 +663,7 @@ aura().use(ext).start(<span class="string"><span class="delimiter">'</span><span
 
 <p>We have found that requirejs central config files can grow pretty dramatically and become hard to manage. It also means that your extensions are not easily portable from one app to the other, since you have to track down all their dependencies and configure require with the right paths.</p>
 
-<p>We think we have a solution for that : Extensions can define their AMD dependencies, paths, shims and all other AMD config themselves. Combined with sane defaults based on <a href="https://github.com/bower/bower">Bower</a>, we can do things like : </p>
+<p>We think we have a solution for that. Extensions can define their AMD dependencies, paths, shims and all other AMD config themselves. Combined with sane defaults based on <a href="https://github.com/bower/bower">Bower</a>, we can do things like: </p>
 
 <p><strong>aura_extensions/my_extension_that_needs_backbone.js</strong></p>
 <div class="highlight js "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
@@ -700,7 +701,7 @@ aura().use(ext).start(<span class="string"><span class="delimiter">'</span><span
 </div></div>
 <p>When <code>initialize</code> is called, Aura ensures that all the dependencies listed in require.paths are already loaded. So we can use the &#39;synchonous&#39; require directly.</p>
 
-<p>Actually what Aura does corresponds to (pseudo-code):</p>
+<p>Actually, what Aura does corresponds to (pseudo-code):</p>
 <div class="highlight js "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
   <td class="line-numbers" title="double click to toggle" ondblclick="with (this.firstChild.style) { display = (display == '') ? 'none' : '' }"><pre>1
 2
@@ -726,9 +727,9 @@ aura().use(ext).start(<span class="string"><span class="delimiter">'</span><span
 
 <p>Let&#39;s take for example a Facebook extension that wraps, loads Facebook javascript SDK, and provides <code>auth.login</code> and <code>auth.logout</code> method to our components.</p>
 
-<p>Let&#39;s also say that we want to wait for facebook js lib to be loaded and initialized to actually start our app. </p>
+<p>Let&#39;s also say that we want to wait for facebook.js lib to be loaded and initialized to actually start our app. </p>
 
-<p>We could do something like : </p>
+<p>We could do something like: </p>
 
 <p><strong>aura_extensions/facebook.js</strong></p>
 <div class="highlight js "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
@@ -782,7 +783,7 @@ aura().use(ext).start(<span class="string"><span class="delimiter">'</span><span
   },
 
   <span class="function">afterAppStart</span>: <span class="keyword">function</span>(app) {
-    console.warn(<span class="string"><span class="delimiter">&quot;</span><span class="content">The app is started and I am : </span><span class="delimiter">&quot;</span></span>, app.sandbox.auth.loginStatus);
+    console.warn(<span class="string"><span class="delimiter">&quot;</span><span class="content">The app is started and I am: </span><span class="delimiter">&quot;</span></span>, app.sandbox.auth.loginStatus);
   }
 });
 </pre></td>
@@ -792,7 +793,7 @@ aura().use(ext).start(<span class="string"><span class="delimiter">'</span><span
 
 <p>Actually, when you have multiple extensions, each extension will wait for the resolution of the previous one to call its initialize method. </p>
 
-<p>Eeach extension can also define a <code>afterAppStart</code> method that will be called after the initialization process. Those callbacks will also be called sequentially, keeping the same order as the extensions load order.</p>
+<p>Each extension can also define an <code>afterAppStart</code> method that will be called after the initialization process. Those callbacks will also be called sequentially, keeping the same order as the extensions load order.</p>
 
 <h2>Using extensions</h2>
 

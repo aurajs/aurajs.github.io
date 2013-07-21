@@ -1,0 +1,1 @@
+$("img.svg").each(function(){var e=$(this),t=e.attr("id"),n=e.attr("class"),r=e.attr("src");$.get(r,function(r){var i=$(r).find("svg");typeof t!="undefined"&&(i=i.attr("id",t)),typeof n!="undefined"&&(i=i.attr("class",n+" replaced-svg")),i=i.removeAttr("xmlns:a"),e.replaceWith(i)})});

@@ -7,6 +7,7 @@ http://aurajs.com/
 http://aurajs.com/requirements/
 http://aurajs.com/robots.txt
 http://aurajs.com/sitemap.txt
+http://aurajs.com/about/
 http://aurajs.com/api/
 http://aurajs.com/examples/
 http://aurajs.com/getting-started/
