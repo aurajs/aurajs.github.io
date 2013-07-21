@@ -44,20 +44,8 @@
     </li>
     
     <li class="">
-      <a href="/guides" rel="Guides">
-        Guides
-      </a>
-    </li>
-    
-    <li class="">
       <a href="/examples" rel="Examples">
         Examples
-      </a>
-    </li>
-    
-    <li class="">
-      <a href="/faq" rel="FAQs">
-        FAQs
       </a>
     </li>
     
@@ -278,6 +266,14 @@
         
           
           <li>
+            <a href="#method-Sandbox-components.afterAppStart">
+              components.afterAppStart
+            </a>
+          </li>
+          
+        
+          
+          <li>
             <a href="#method-Sandbox-emit">
               emit
             </a>
@@ -366,7 +362,7 @@
   
   <div><p>Aura constructor and main entry point</p>
 
-<p>Every instance of Aura is an Aura application.
+<p>Every instance of Aura defines an Aura application.
 An Aura application is in charge of loading the various
 extensions that will apply to it (defined either
 programmatically or by way of configuration).</p>
@@ -383,25 +379,21 @@ and components inside its instance.</p>
 <li><code>extensions</code> An instance of the ExtensionManager. It contains all the extensions that will be loaded in the app.</li>
 </ul>
 
-<p>Extensions are here to provide features that will be used by the components.
+<p>Extensions are here to provide features that will be used by the components...
 They are meant to extend the apps&#39; core &amp; sandbox.
-They also have full access to the apps&#39;s config.</p>
+They also have access to the apps&#39;s config.</p>
 
 <p>Example of a creation of an Aura Application:</p>
-<div class="highlight js "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
+<div class="highlight javascript "><div class="ribbon"></div><div class="scroller"><table class="CodeRay"><tr>
   <td class="line-numbers" title="double click to toggle" ondblclick="with (this.firstChild.style) { display = (display == '') ? 'none' : '' }"><pre>1
 2
 3
 4
-5
-6
 </pre></td>
-  <td class="code"><pre>require([<span class="string"><span class="delimiter">'</span><span class="content">aura</span><span class="delimiter">'</span></span>], <span class="keyword">function</span>() {
-  <span class="keyword">var</span> app = aura({ <span class="key">key</span>: <span class="string"><span class="delimiter">'</span><span class="content">value</span><span class="delimiter">'</span></span> });
-  app.use(<span class="string"><span class="delimiter">'</span><span class="content">ext1</span><span class="delimiter">'</span></span>).use(<span class="string"><span class="delimiter">'</span><span class="content">ext2</span><span class="delimiter">'</span></span>);
-  app.components.addSource(<span class="string"><span class="delimiter">'</span><span class="content">supercomponents</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">https://my.extern.al/components/store</span><span class="delimiter">'</span></span>);
-  app.start(<span class="string"><span class="delimiter">'</span><span class="content">body</span><span class="delimiter">'</span></span>);
-})
+  <td class="code"><pre><span class="keyword">var</span> app = aura({ <span class="key">key</span>: <span class="string"><span class="delimiter">'</span><span class="content">value</span><span class="delimiter">'</span></span> });
+app.use(<span class="string"><span class="delimiter">'</span><span class="content">ext1</span><span class="delimiter">'</span></span>).use(<span class="string"><span class="delimiter">'</span><span class="content">ext2</span><span class="delimiter">'</span></span>);
+app.components.addSource(<span class="string"><span class="delimiter">'</span><span class="content">supercomponents</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">https://my.extern.al/components/store</span><span class="delimiter">'</span></span>);
+app.start(<span class="string"><span class="delimiter">'</span><span class="content">body</span><span class="delimiter">'</span></span>);
 </pre></td>
 </tr></table>
 </div></div></div>  
@@ -418,8 +410,8 @@ They also have full access to the apps&#39;s config.</p>
   components.addSource( <span class="params">name, baseUrl</span> )    
 </h2>
 <div><p>Adds a new source for components.
-A Component source is a http endpoint
-that is the root of a components repository.</p>
+A Component source is an endpoint (basically a URL)
+that is the root of a component repository.</p>
 </div>  
 
 <h5>Parameters:</h5>
@@ -791,7 +783,7 @@ of sandboxed environments for the Components.</p>
 
 <p>Bootstraps the extensions loading process.
 All the extensions are resolved and loaded when <code>start</code> id called.
-Start returns a promis e that shall fail if any of the
+Start returns a promise that shall fail if any of the
 extensions fails to load.</p>
 
 <p>The app&#39;s responsibility is to load its extensions,
@@ -852,7 +844,7 @@ they are responsible for :</p>
 
 <ul>
 <li>resolving &amp; loading external dependencies via requirejs</li>
-<li>they have a direct access to the app&#39;s internals</li>
+<li>they have direct access to the app&#39;s internals</li>
 <li>they are here to add new features to the app... that are made available through the sandboxes to the components.</li>
 </ul>
 
@@ -1063,7 +1055,7 @@ Note that the App is started when its <code>start</code> method is called.</p>
   options
 </h2>
 <div><p>The Components&#39; options Object, passed to its constructor.
-TODO: Add explain, how options are set from HTML API + which default options are
+TODO: Add explanation of how options are set from HTML API + which default options are
 set during the Component initialization.</p>
 </div>  
 
@@ -1075,6 +1067,40 @@ set during the Component initialization.</p>
     </a>
     Sandbox
   </h1>
+
+  
+  
+  
+    <h2>
+  <small class="pull-right">
+    <a href='#class-Sandbox'>Sandbox method</a>
+  </small>
+  <a href="#method-Sandbox-components.afterAppStart" name="method-Sandbox-components.afterAppStart" class="documentation-anchor">
+    &infin;
+  </a>
+  components.afterAppStart( <span class="params">an</span> )    
+</h2>
+<div><p>When all of an application&#39;s extensions are finally loaded, the &#39;extensions&#39; 
+afterAppStart methods are then called.</p>
+</div>  
+
+<h5>Parameters:</h5>
+<table class='table'>
+  
+  <tr width="100%">
+    <td width="25%">
+      <span class='label label-brand'>an</span>
+    </td>
+    <td width="25%">
+      
+      Object
+    </td>
+    <td width="50%">
+      Aura application object
+    </td>
+  </tr>
+  
+</table>
 
   
   
