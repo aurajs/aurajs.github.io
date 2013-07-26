@@ -16,6 +16,3 @@ http://aurajs.com/guides/2013/07/06/welcome.html
 http://aurajs.com/guides/
 http://aurajs.com/images/doc-loading.gif
 http://aurajs.com/resources/
-http://aurajs.com/stylesheets/fonts/iconfont/
-http://aurajs.com/stylesheets/fonts/iconic/iconic_fill.afm
-http://aurajs.com/stylesheets/fonts/iconic/iconic_fill.otf
